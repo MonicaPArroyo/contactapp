@@ -103,7 +103,12 @@ const HandleContact: React.FC<{
 	};
 
 	return (
-		<Modal isOpen={isOpen} onOpenChange={onOpenChange} backdrop="blur">
+		<Modal
+			isOpen={isOpen}
+			onOpenChange={onOpenChange}
+			backdrop="blur"
+			placement="top-center"
+		>
 			<ModalContent>
 				{(onClose) => (
 					<Formik
@@ -121,10 +126,10 @@ const HandleContact: React.FC<{
 										as={Input}
 										id="name"
 										name="name"
-										autoFocus
 										label="Name"
 										variant="bordered"
 										isRequired
+										autocomplete="name"
 										isInvalid={
 											!!errors.name && touched.name
 										}
@@ -148,8 +153,10 @@ const HandleContact: React.FC<{
 										id="phone"
 										name="phone"
 										label="Phone Number"
+										type="tel"
 										variant="bordered"
 										isRequired
+										autocomplete="tel-national"
 										isInvalid={
 											!!errors.phone && touched.phone
 										}
@@ -162,8 +169,10 @@ const HandleContact: React.FC<{
 										id="email"
 										name="email"
 										label="Email"
+										type="email"
 										variant="bordered"
 										isRequired
+										autocomplete="email"
 										isInvalid={
 											!!errors.email && touched.email
 										}

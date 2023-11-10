@@ -44,7 +44,12 @@ const DeleteContact: React.FC<{
 	};
 
 	return (
-		<Modal isOpen={isOpen} onOpenChange={onOpenChange} backdrop="blur">
+		<Modal
+			isOpen={isOpen}
+			onOpenChange={onOpenChange}
+			backdrop="blur"
+			placement="top-center"
+		>
 			<ModalContent>
 				{(onClose) => (
 					<ModalBody>
